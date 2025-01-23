@@ -1,15 +1,9 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 
 // Função para calcular a densidade populacional de uma cidade
-int pib_per_capita(float pib, int population){
-    int pibPerCapita;
+float pib_per_capita(float pib, int population){
+    float pibPerCapita;
 
     pibPerCapita = pib / population;
 
@@ -32,9 +26,9 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    char estadoCidade[1], codCarta[10], nome[20];
-    int population, pontosTuristicos, pibPerCapita;
-    float area, pib, densidadePopulacional;
+    char estadoCidade, codCarta[10], nome[20];
+    int population, pontosTuristicos;
+    float area, pib, densidadePopulacional, pibPerCapita, superPow;
     
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -69,8 +63,8 @@ int main() {
     printf("População: %d\n", population);
     printf("Área: %.2f km²\n", area);
     printf("Densidade Populacional: %.2f pessoas/km²\n", densidadePopulacional);
-    printf("PIB: %.3f bilhões de reais\n", pib);
-    printf("PIB per Capita: %d reais\n", pibPerCapita);
+    printf("PIB: %.2f bilhões de reais\n", pib);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita);
     printf("Pontos turísticos da Cidade: %.d\n", pontosTuristicos);
     
 
