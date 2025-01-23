@@ -22,11 +22,22 @@ float calc_densidade_populacional(int population, float area){
 }
 
 
+float calc_super_pow(
+    int population, int pontosTuristicos, float area, float pib, 
+    float densidadePopulacional, float pibPerCapita
+){
+    float superPow;
+
+    superPow = population + pontosTuristicos + area + pib + densidadePopulacional + pibPerCapita;
+
+    return superPow;
+}
+
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    char estadoCidade, codCarta[10], nome[20];
+    char estadoCidade[0], codCarta[10], nome[20];
     int population, pontosTuristicos;
     float area, pib, densidadePopulacional, pibPerCapita, superPow;
     
@@ -51,6 +62,7 @@ int main() {
 
     densidadePopulacional = calc_densidade_populacional(population, area);
     pibPerCapita = pib_per_capita(pib, population);
+    superPow = calc_super_pow(population, pontosTuristicos, area, pib, densidadePopulacional, pibPerCapita);
     printf("\n");
 
     // Exibição dos Dados das Cartas:
@@ -65,7 +77,8 @@ int main() {
     printf("Densidade Populacional: %.2f pessoas/km²\n", densidadePopulacional);
     printf("PIB: %.2f bilhões de reais\n", pib);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita);
-    printf("Pontos turísticos da Cidade: %.d\n", pontosTuristicos);
+    printf("Pontos turísticos da Cidade: %d\n", pontosTuristicos);
+    printf("Super Poder: %.f", superPow);
     
 
     return 0;
